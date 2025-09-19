@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Simple single-file personal website template: hero, about, projects, contact." />
+  <style>
+    /* --------------------------------------------
+       Simple responsive stylesheet — single-file
+       Edit colors, text, and sections below.
+       --------------------------------------------*/
+    :root{
+      --bg:#0f1724; /* dark */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      color-scheme: dark;
+      color: #e6eef8;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071021);}
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:var(--maxw);margin:28px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:grid;place-items:center;font-weight:700}
+    nav{display:flex;gap:12px}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted)}
+    nav a.primary{background:var(--glass);color:var(--accent)}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;box-shadow:0 6px 22px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:30px;line-height:1.05}
+    p.lead{color:var(--muted);margin-top:12px}
+
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:18px;background:linear-gradient(180deg,#0b1220,#092033);display:grid;place-items:center;font-size:42px;color:var(--accent);font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* sections */
+    section{margin-top:22px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+    .projects .proj{display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:12px;background:var(--card)}
+    .proj h4{margin:0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .avatar{width:120px;height:120px}
+    }
+
+    /* small utilities */
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;font-weight:700}
+    .muted{color:var(--muted)}
+    .center{display:grid;place-items:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:700">Your Name</div>
+          <div class="small muted">Web developer • Designer • Creator</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="primary">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Hi — I'm <span style="color:var(--accent)">Your Name</span>.</h1>
+          <p class="lead">I build modern web experiences. I enjoy crafting clean UI, thoughtful interactions, and performant frontend applications.
+          </p>
+
+          <div style="margin-top:18px;display:flex;gap:12px">
+            <a class="btn" href="#projects">See projects</a>
+            <a style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:700" href="#contact">Hire me</a>
+          </div>
+
+          <div style="margin-top:18px" class="muted">Based in Philippines • Available for remote work</div>
+        </div>
+
+        <aside class="profile card center">
+          <div class="avatar">YN</div>
+          <div style="font-weight:700">Your Name</div>
+          <div class="small muted">Front-end Developer</div>
+
+          <div style="margin-top:12px;width:100%">
+            <div style="display:flex;justify-content:space-between;gap:8px">
+              <div style="flex:1" class="card small center">
+                <div style="font-weight:700">5+</div>
+                <div class="muted">Years exp</div>
+              </div>
+              <div style="flex:1" class="card small center">
+                <div style="font-weight:700">12</div>
+                <div class="muted">Projects</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="card">
+        <h2>About</h2>
+        <p class="muted">I’m a web developer who focuses on building accessible, fast, and delightful user experiences. I enjoy working with modern JavaScript frameworks and turning ideas into polished products.</p>
+
+        <div class="grid-2" style="margin-top:14px">
+          <div>
+            <h3>Skills</h3>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+          <div>
+            <h3>What I bring</h3>
+            <ul class="muted">
+              <li>Pixel-perfect UIs and responsive layouts</li>
+              <li>Performance-minded development</li>
+              <li>Clean, maintainable code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid-2 projects">
+          <div class="proj card">
+            <h4>Project One</h4>
+            <p class="muted">A short one-line description of the project, what tech was used, and the outcome.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
+            <div style="margin-top:8px"><a class="muted" href="#">View →</a></div>
+          </div>
+
+          <div class="proj card">
+            <h4>Project Two</h4>
+            <p class="muted">Another short description — this could be a case study link or live demo pointer.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+            <div style="margin-top:8px"><a class="muted" href="#">View →</a></div>
+          </div>
+
+          <!-- copy the .proj block to add more projects -->
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p class="muted">Interested in working together? Send me a message.</p>
+        <!-- simple contact: mailto or a contact form (needs backend) -->
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="mailto:youremail@example.com?subject=Work%20enquiry">Email me</a>
+          <a class="muted" href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a class="muted" href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>Made with ❤️ — Your Name • <span class="muted">Updated: Sep 19, 2025</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Lightweight script area for small interactive bits.
+    // Replace or extend as needed.
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>
